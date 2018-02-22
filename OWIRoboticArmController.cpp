@@ -43,7 +43,7 @@ static void print_devs(libusb_device **list){
 
         if (desc.idVendor == 0x1267 && desc.idProduct == 0x0000)
             printf ("ha!");
-        }
+
         printf("Vendor: Device = %04x:%04x\n", desc.idVendor, desc.idProduct);
     }
 }
