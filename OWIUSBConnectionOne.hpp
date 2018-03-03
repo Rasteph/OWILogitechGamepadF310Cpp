@@ -33,8 +33,6 @@ class OWIUSBConnection
         void setLightSwitch();
         int getLightSwitch();
 
-
-
     private:
         int base;
         int shoulder;
