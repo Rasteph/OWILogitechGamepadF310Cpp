@@ -33,16 +33,20 @@ class OWIUSBConnection
         void setLightSwitch();
         int getLightSwitch();
 
-    //protected:
-        bool switchLight;
+
+
+    private:
         int base;
         int shoulder;
         int elbow;
         int grip;
         int lightSwitch;
         int wrist;
+        bool switchLight;
         struct libusb_device_handle *devh;
         libusb_device *dev;
+
+
 };
 
 #endif
