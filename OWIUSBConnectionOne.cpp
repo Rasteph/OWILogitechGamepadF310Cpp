@@ -107,12 +107,13 @@ void OWIUSBConnection::controlTransfer(unsigned char cmd[3]){
     int r = libusb_control_transfer(devh,
                                 0x40,   //uint8_t 	    bmRequestType,
                                 6,      //uint8_t 	    bRequest,
-                                0x100,  //uint16_t 	    wValue,
-                                0,      //uint16_t 	    wIndex,
-                                cmd,
-                                CMD_DATALEN,
-                                0	 
+                                0x100,  //uint16_t 	    wValue: value field for the setup packet,
+                                0,      //uint16_t 	    wIndex: index field for the setup packet,
+                                cmd,    //suitably-sized data buffer for either input or output (depending on direction bits within bmRequestType) 
+                                CMD_DATALEN, //length field for the setup packet. The data buffer should be at least this size.,
+                                0	 // timeout
     );
+    std::cout << "r: " << r << std::endl;
     if(!(r == 0 && actual_length >= CMD_DATALEN))
     {
         fprintf(stderr, "Write err %d. len=%d\n",r,actual_length);

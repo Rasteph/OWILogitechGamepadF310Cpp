@@ -20,10 +20,6 @@ class OWIUSBConnection
         OWIUSBConnection();
         ~OWIUSBConnection();
 
-        void controlTransfer(unsigned char cmd[3]);
-
-        unsigned char setupCommand();
-
         void stopMotion();
         void baseMotion(char motionDirection);
         void shoulderMotion(char motionDirection);
@@ -34,6 +30,10 @@ class OWIUSBConnection
         int getLightSwitch();
 
     private:
+
+        void controlTransfer(unsigned char cmd[3]);
+        unsigned char setupCommand();
+        
         int base;
         int shoulder;
         int elbow;
