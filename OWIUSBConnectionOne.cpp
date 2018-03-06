@@ -13,35 +13,6 @@
 
 #include "OWIUSBConnectionOne.hpp"
 
-// class OWIUSBConnection{
-//     public:
-//         OWIUSBConnection();
-//         ~OWIUSBConnection();
-//         void controlTransfer(unsigned char cmd[3]);
-
-//         unsigned char setupCommand();
-
-//         void stopMotion();
-//         void baseMotion(char motionDirection);
-//         void shoulderMotion(char motionDirection);
-//         void wristMotion(char motionDirection);
-//         void gripMotion(char motionDirection);
-//         void elbowMotion(char motionDirection);
-//         void setLightSwitch(bool switchVal);
-//         int getLightSwitch();
-
-//     private:
-//         bool switchLight;
-//         int base;
-//         int shoulder;
-//         int elbow;
-//         int grip;
-//         int lightSwitch;
-//         int wrist;
-//         struct libusb_device_handle *devh;
-        
-// };
-
 libusb_device *find_dev(libusb_device **list){
     libusb_context *context = NULL;
     int rc = 0;
